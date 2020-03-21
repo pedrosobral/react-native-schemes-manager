@@ -118,6 +118,8 @@ fi
 
 BUNDLE_FILE="$DEST/main.jsbundle"
 
+echo NODE_BINARY=$NODE_BINARY
+
 "$NODE_BINARY" $NODE_ARGS "$CLI_PATH" $BUNDLE_COMMAND \
   $CONFIG_ARG \
   --entry-file "$ENTRY_FILE" \
@@ -134,7 +136,7 @@ cd "$SCHEMES_MANAGER_DIR/../.."
 $NODE_BINARY "$SCHEMES_MANAGER_DIR/index.js" hide-library-schemes
 
 if [[ $DEV != true && ! -f "$BUNDLE_FILE" ]]; then
-  echo "error: File $BUNDLE_FILE does not exist. This must be a bug with" >&2
+  echo "error: SOBRAL PACKAGE $BUNDLE_FILE does not exist. This must be a bug with" >&2
   echo "React Native, please report it here: https://github.com/facebook/react-native/issues"
   exit 2
 fi
