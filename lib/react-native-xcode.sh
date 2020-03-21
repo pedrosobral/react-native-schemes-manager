@@ -118,10 +118,12 @@ fi
 
 BUNDLE_FILE="$DEST/main.jsbundle"
 
-echo NODE_BINARY=$NODE_BINARY
+echo "NODE_BINARY $NODE_BINARY"
+echo "NODE_BINARY -version $(NODE_BINARY --version)"
 
 "$NODE_BINARY" $NODE_ARGS "$CLI_PATH" $BUNDLE_COMMAND \
   $CONFIG_ARG \
+	--verbose
   --entry-file "$ENTRY_FILE" \
   --platform ios \
   --dev $DEV \
